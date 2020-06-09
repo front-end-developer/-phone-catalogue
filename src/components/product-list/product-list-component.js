@@ -3,7 +3,25 @@
  */
 
 import React, {Component, PureComponent} from 'react';
-import ProductDetailComponent from '../product-detail';
+import Template from "./product-list-template";
+import ProductDetailComponent from './product-detail/product-detail-component';
+
+/*
+import React from 'react';
+
+const ProductList = () => {
+    return (
+        <section className="container">
+            <div className="row">
+                ROW ONE (1)
+            </div>
+            <div className="row">
+                ROW ONE (2)
+            </div>
+        </section>
+    );
+}
+*/
 
 export default class ProductListComponent extends PureComponent {
 
@@ -20,9 +38,13 @@ export default class ProductListComponent extends PureComponent {
      */
     render() {
         return (
-            <>
-                <h1>asdf</h1>
-            </>
+            <section className="container">
+                <Template />
+                <div className="row">
+                    ROW THREE (3)
+                    <ProductDetailComponent />
+                </div>
+            </section>
         )
     }
 }

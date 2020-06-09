@@ -10,7 +10,7 @@
     z-index: 2;
     .brand {
       display: block;
-      background: url{$brand-logo} no-repeat $brand-background;
+      background: url($brand-logo) no-repeat $brand-background;
       width: 178px;
       height: 55px;
     }

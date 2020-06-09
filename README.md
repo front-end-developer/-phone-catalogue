@@ -1,6 +1,9 @@
 ##### Phone Catalogue - React
 By Mark Webley
 
+Example of Custom Architecture with React, Redux, Epics, Rxjs, Services, API end point control, node.js API and more.
+TODO: docker script.
+
 To install execute:
 - npm i
 - npm i -g nodemon
