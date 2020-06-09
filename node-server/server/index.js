@@ -13,9 +13,7 @@ app.get('/api/phones', (req, res) => {
    const name = req.query.name || 'World';
    res.setHeader('Content-Type', 'application/json');
    let data = mockPhoneData();
-   res.send(JSON.stringify({
-       data
-   }))
+   res.send(JSON.stringify(data));
 });
 
 app.listen(3001, () => {

@@ -16,10 +16,10 @@ const fetchPhonesEpic = action$ => (
             return ajax.getJSON(APISERVICE.API.GET_PHONES)
                 .pipe(
                     map(phones => {
-                        console.log('phones: ', phones.results);
+                        console.log('phones: ', phones);
                         return {
                             type: types.LOAD_SUCCESS,
-                            phones: phones.results
+                            phones: phones // phones.results
                         }
                     }),
                     catchError(error => {
