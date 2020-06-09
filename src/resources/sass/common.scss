@@ -1,0 +1,39 @@
+/**
+ * Created by mawebley on 09/06/2020
+ * @description   common platform styles
+ */
+.container-fluid {
+  padding-right: 0;
+  margin-right: 0;
+  &.clear {
+    display: block;
+    margin-top: 55px;
+  }
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  h1, h3 {
+    font-family: BrandFont;
+  }
+}
+
+footer {
+  margin-top: 50px;
+  text-align: center;
+  background-color: #000;
+  height: 150px;
+  ul {
+    li {
+      list-style-type: disc;
+      display: inline-block;
+      padding: 25px 5px 5px 25px;
+      a {
+        color: #000;
+        font-size: 0.8em;
+      }
+    }
+  }
+}

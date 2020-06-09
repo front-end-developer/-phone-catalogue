@@ -1,0 +1,18 @@
+/**
+ * Created by mawebley on 09/06/2020
+ */
+@import '../../../resources/sass/variables.scss';
+.navbar {
+  &.navbar-custom {
+    width: 100% !important;
+    height: 72px;
+    background: $brand-background !important;
+    z-index: 2;
+    .brand {
+      display: block;
+      background: url{$brand-logo} no-repeat $brand-background;
+      width: 178px;
+      height: 55px;
+    }
+  }
+}
