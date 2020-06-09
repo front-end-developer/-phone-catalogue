@@ -12,14 +12,13 @@ const fetchPhonesEpic = action$ => (
     action$.pipe(
         ofType(types.LOAD_PHONES),
         switchMap(() => {
-            console.log('API:', APISERVICE.API.GET_PHONES);
             return ajax.getJSON(APISERVICE.API.GET_PHONES)
                 .pipe(
                     map(phones => {
-                        console.log('phones: ', phones);
+                        console.log('TODO: delete this console.log: ', phones);
                         return {
                             type: types.LOAD_SUCCESS,
-                            phones: phones // phones.results
+                            phones: phones.data
                         }
                     }),
                     catchError(error => {

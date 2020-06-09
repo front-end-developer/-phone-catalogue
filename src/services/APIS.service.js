@@ -3,7 +3,7 @@
  */
 export const APISERVICE = {
     API: {
-        GET_PHONES: 'http://www.localhost:3100/api/phones'
+        GET_PHONES: 'http://localhost:3001/api/phones'
     }
 }
 export default APISERVICE;

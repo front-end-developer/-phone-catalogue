@@ -4,20 +4,27 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+const port = 3001;
 
 app.use(bodyParser.urlencoded({
     extended: false
 }));
 
+app.use((req, res, next) => {
+    res.header('Content-Type', 'application/json');
+    res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 app.get('/api/phones', (req, res) => {
    const name = req.query.name || 'World';
-   res.setHeader('Content-Type', 'application/json');
    let data = mockPhoneData();
    res.send(JSON.stringify(data));
 });
 
-app.listen(3001, () => {
-    console.log('Express server is runnning on localhost:3001', 'go to: localhost:3001/api/phones');
+app.listen(port, () => {
+    console.log(`Express server is runnning on localhost:${port}`, `go to: localhost:${port}/api/phones`);
 });
 
 /**

@@ -14,6 +14,7 @@ const AppLinks = () => {
     ];
 
     let linksList = links.map((link, index) => {
+        console.log('link: ', link, '  index: ', index);
        return (
            <li>
                <NavLink key={index}
