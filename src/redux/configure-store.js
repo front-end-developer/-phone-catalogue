@@ -2,7 +2,7 @@
  * Created by mawebley on 09/06/2020
  */
 import {createStore, applyMiddleware, compose} from 'redux';
-import rootReducer from './reducers/rootReducer';
+import rootReducer from './reducers/root-reducer';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import {createEpicMiddleware} from 'redux-observable';
 import promise from 'redux-promise-middleware';

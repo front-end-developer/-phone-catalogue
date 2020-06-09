@@ -1,7 +1,7 @@
 /**
  * Created by mawebley on 09/06/2020
  */
-import React from "react";
+import React from 'react';
 import cssModule from './style.module.scss';
 
 const PageNotFound = () => {

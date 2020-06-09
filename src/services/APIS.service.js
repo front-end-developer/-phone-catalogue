@@ -6,3 +6,4 @@ export const APISERVICE = {
         GET_PHONES: 'http://www.localhost:3100/api/phones'
     }
 }
+export default APISERVICE;

@@ -1,11 +1,11 @@
 /**
  * Created by mawebley on 09/06/2020
  */
-import React from "react";
+import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import PageNotFound from '../components/common/page-not-found/page-not-found';
-import AppLinks from "./app-links";
-import ProductListComponent from "../components/product-list/product-list-component";
+import AppLinks from './app-links';
+import ProductListComponent from '../components/product-list/product-list-component';
 
 const AppRoutes = () => (
     <Router>

@@ -3,7 +3,7 @@
  */
 
 import React, {Component, PureComponent} from 'react';
-import Template from "./product-list-template";
+import Template from './product-list-template';
 import ProductDetailComponent from './product-detail/product-detail-component';
 
 /*
@@ -41,7 +41,7 @@ export default class ProductListComponent extends PureComponent {
             <section className="container">
                 <Template />
                 <div className="row">
-                    ROW THREE (3)
+                    <div>ROW THREE (3)</div>
                     <ProductDetailComponent />
                 </div>
             </section>

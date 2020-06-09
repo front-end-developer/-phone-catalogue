@@ -8,7 +8,7 @@ import {Provider as ReduxProvider} from 'react-redux';
 import configureStore from './redux/configure-store';
 
 import './resources/sass/main.scss';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 /**
  * TODO: delete this my sketch

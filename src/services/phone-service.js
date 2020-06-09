@@ -3,8 +3,8 @@
  */
 
 import {APISERVICE} from './APIS.service';
-import {fromFetch} from "rxjs/fetch";
-import {catchError, switchMap} from "rxjs/operators";
+import {fromFetch} from 'rxjs/fetch';
+import {catchError, switchMap} from 'rxjs/operators';
 export default class PhoneService {
     getPhones() {
         // return APISERVICE.API.GET_PHONES;
