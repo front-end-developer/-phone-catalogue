@@ -2,15 +2,21 @@
  * Created by mawebley on 08/06/2020
  * For custom template styles
  */
+@import '../../resources/sass/variables.scss';
+h3 {
+  background: $brand-bg-blue;
+  text-align: center;
+  color: #fff;
+  padding: 5px;
+}
 img {
   max-height: 225px;
   margin: auto;
 }
 
-.cssModule {
-  .price {
-    font-size: 1.2rem;
-    color: #28b517;
-  }
+.price {
+  font-size: 1.5rem;
+  color: $brand-green;
+  text-align: center;
+  margin-bottom: 5px;
 }
-
