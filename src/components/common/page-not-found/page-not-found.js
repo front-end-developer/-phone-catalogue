@@ -15,7 +15,7 @@ const PageNotFound = () => {
                 Page Not Found Component
             </h1>
             <div style={style404}>404</div>
-            <img src={'/assets/images/404-error.jpg'} />
+            <img src={'/assets/images/404-error.jpg'} alt="error page" />
         </div>
     )
 }

@@ -2,7 +2,8 @@
  * Created by mawebley on 08/06/2020
  */
 
-import React, {Component, PureComponent} from 'react';
+import React, {PureComponent} from 'react';
+import {connect} from 'react-redux';
 import Template from './product-list-template';
 import ProductDetailComponent from './product-detail/product-detail-component';
 
@@ -22,15 +23,29 @@ const ProductList = () => {
     );
 }
 */
+import * as phoneActions from '../../redux/actions/load-phones-action';
 
-export default class ProductListComponent extends PureComponent {
+class ProductListComponent extends PureComponent {
 
     /**
      *
-     * @param props
+     * @param state
      */
-    constructor(props) {
-        super(props);
+    state = {
+        phones: [],
+        selected: {}
+    };
+
+    componentDidMount() {
+        this.props.loadProducts();
+    }
+
+    /**
+     *
+     * @param data
+     */
+    clickProduct = (data) => {
+        // this.props.productSelected(data);
     }
 
     /**
@@ -48,3 +63,24 @@ export default class ProductListComponent extends PureComponent {
         )
     }
 }
+
+const mapComponentStateToProps = (state, ownProps) => {
+    console.log('phones loaded: ', state.phones);
+    return {
+        phones: state.phones
+    }
+}
+
+const mapDispatchToComponentProps = (dispatch) => {
+    return {
+        // productSelected: data => dispatch(phoneActions.xxxxxActionCreator(data))
+        loadProducts: () => dispatch(phoneActions.loadPhonesActionCreator())
+    }
+}
+
+export default connect(
+    mapComponentStateToProps,
+    mapDispatchToComponentProps,
+)(ProductListComponent);
+
+// export default ProductListComponent;

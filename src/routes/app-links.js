@@ -2,7 +2,7 @@
  * Created by mawebley on 09/06/2020
  */
 import React from 'react';
-import {Link, NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import cssModule from './style.module.scss';
 
 const AppLinks = () => {

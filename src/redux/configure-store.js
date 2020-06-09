@@ -35,7 +35,7 @@ export default function configureStore(initialState) {
     const storeCreated = createStore(
         rootReducer,
         initialState,
-        (process.env.NODE_ENV == 'development' ? composeEnhancers(devMiddleware()) : prodMiddleware())
+        (process.env.NODE_ENV === 'development' ? composeEnhancers(devMiddleware()) : prodMiddleware())
     );
     epicMiddleware.run(rootEpic);
     return storeCreated;
