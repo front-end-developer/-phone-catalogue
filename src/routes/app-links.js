@@ -14,11 +14,9 @@ const AppLinks = () => {
     ];
 
     let linksList = links.map((link, index) => {
-        console.log('link: ', link, '  index: ', index);
        return (
-           <li>
-               <NavLink key={index}
-                        className='link'
+           <li key={index.toString()}>
+               <NavLink className='link'
                         activeClassName={cssModule.activeNavLink}
                         to={link.url}
                         exact={index === 0 ? true : false}>

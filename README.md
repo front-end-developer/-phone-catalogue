@@ -1,7 +1,10 @@
 ##### Phone Catalogue - React
 By Mark Webley
 
-Example of Custom: Architecture with React, Redux, Epics, Rxjs, Services, API end point control, node.js API and more.
+Example of Custom: Architecture with React 16.13.1, Redux, Epics, Rxjs, Services, API end point control, node.js API, React Class example, React Hooks example and more.
+
+__Note:__ _The current lifecycle methods componentWillMount, componentWillReceiveProps, and componentWillUpdate will be deprecated in a future ReactJS 16.x release._
+
 TODO: docker script.
 
 To install execute:

@@ -2,5 +2,15 @@
  * Created by mawebley on 08/06/2020
  * For custom template styles
  */
+img {
+  max-height: 225px;
+  margin: auto;
+}
 
+.cssModule {
+  .price {
+    font-size: 1.2rem;
+    color: #28b517;
+  }
+}
 
