@@ -14,7 +14,7 @@ const Template = ({id, name, manufacturer, description,
         <div className="row">
             <img src={imageFileName} alt={name} />
         </div>
-        <div className="">
+        <div className={cssModule.description}>
             {description}
         </div>
         <div className={cssModule.price}>

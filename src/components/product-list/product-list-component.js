@@ -9,23 +9,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import Template from './product-list-template';
 import ProductDetailComponent from './product-detail/product-detail-component';
-
-/*
-import React from 'react';
-
-const ProductList = () => {
-    return (
-        <section className="container">
-            <div className="row">
-                ROW ONE (1)
-            </div>
-            <div className="row">
-                ROW ONE (2)
-            </div>
-        </section>
-    );
-}
-*/
+import cssModule from './product-list.module.scss'
 import * as phoneActions from '../../redux/actions/load-phones-action';
 
 class ProductListComponent extends Component {
@@ -88,6 +72,7 @@ class ProductListComponent extends Component {
      * @param data
      */
     clickProduct = (data) => {
+        console.log(data);
         // this.props.productSelected(data);
     }
 
@@ -98,9 +83,16 @@ class ProductListComponent extends Component {
         // TODO: consider using destructure for [phones, loading]
         const {phones, isLoading, error} = this.props.phones;
         console.log('isLoading: ', isLoading);
+        if (isLoading) {
+            return (
+                <div className={cssModule.loader} role="status">
+                    <span className="sr-only">Loading...</span>
+                </div>
+            )
+        }
+
         if (phones.length > 0) {
             const tmpl = phones.map((phone, index) => {
-                console.log(index);
                 return <Template key={phone.id.toString()} {...phone} />
             });
 

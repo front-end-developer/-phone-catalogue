@@ -14,9 +14,39 @@ img {
   margin: auto;
 }
 
+.description {
+  min-height: 150px;
+}
+
 .price {
   font-size: 1.5rem;
   color: $brand-green;
   text-align: center;
   margin-bottom: 5px;
 }
+
+/**
+ * @description   normally I would create a platform loader in as a shared component but to save time i put it here
+ */
+.loader {
+  display: block;
+  margin: auto;
+  color: #007bff;
+  width: 5rem;
+  height: 5rem;
+  vertical-align: text-bottom;
+  border: .25em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spinner-loader .75s linear infinite;
+}
+
+@keyframes spinner-loader {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}
+

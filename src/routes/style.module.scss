@@ -1,11 +1,20 @@
 /**
  * Created by mawebley on 09/06/2020
  */
-.cssModule {
-  .link {
-    font-weight: normal;
+@import '../resources/sass/variables.scss';
+ul {
+  padding: 15px;
+  margin: 0 0 15px 0;
+  li {
+    list-style: none;
+    background: $brand-bg-grey;
+    padding: 5px;
   }
-  .activeNavLink {
-    font-weight: bold;
-  }
+}
+
+.link {
+  font-weight: normal;
+}
+.activeNavLink {
+  font-weight: bold;
 }
