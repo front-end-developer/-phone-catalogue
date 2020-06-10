@@ -120,8 +120,6 @@ class ProductListComponent extends Component {
                 }
             }
 
-            // show ProductDetailComponent component on the right, populate with Redux on click
-
             return (
                 <section className="container">
                     <div className="d-flex flex-wrap justify-content-between">
@@ -155,9 +153,7 @@ const mapComponentStateToProps = (state) => {
 
 const mapDispatchToComponentProps = (dispatch) => {
     return {
-        // productSelected: data => dispatch(phoneActions.xxxxxActionCreator(data))
-        loadProducts: () => dispatch(phoneActions.loadPhonesActionCreator()),
-        // loadedProducts: data => dispatch(phoneActions.loadPhonesSuccessActionCreator(data))
+        loadProducts: () => dispatch(phoneActions.loadPhonesActionCreator())
     }
 }
 

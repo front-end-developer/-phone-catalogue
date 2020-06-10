@@ -1,7 +1,7 @@
 ##### Phone Catalogue - React
 By Mark Webley
 
-Example of Custom: Architecture with React 16.13.1, Redux, Epics, Rxjs, Services, API end point control, node.js API, React Class example, React Hooks example, bootstrap / bootstrap flexbox, responsive, scss and more.
+Example of Custom: Architecture with React 16.13.1, Redux, Epics, Rxjs, Services, API end point control, React Hooks, node.js API, React Class example, React Hooks example, bootstrap / bootstrap flexbox, responsive, scss and more.
 
 More focus was placed on the architecture, and communication between widgets then the UI design.
 
@@ -41,6 +41,9 @@ Trouble shooting:
 
 ### Mobile detail view
 ![Alt text](screenshots/mobile-view-detail.PNG "detail view")
+
+### Mobile detail view, live product ticker
+![Alt text](screenshots/mobile-view-live-product-ticker.PNG "product ticker")
 
 ### Mobile view loader
 ![Alt text](screenshots/mobile-view-loader.PNG "loading view")

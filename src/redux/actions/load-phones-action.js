@@ -1,5 +1,6 @@
 /**
  * Created by mawebley on 09/06/2020
+ * @description actions for loading phones
  */
 import * as types from './all-action-types';
 
