@@ -1,4 +1,4 @@
-##### Phone Catalogue - React
+# Phone Catalogue - React
 By Mark Webley
 
 Example of Custom: Architecture with React 16.13.1, Redux, Epics, Rxjs, Services, API end point control, React Hooks, node.js API, React Class example, React Hooks example, bootstrap / bootstrap flexbox, responsive, scss and more.
