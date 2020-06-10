@@ -54,16 +54,6 @@ Trouble shooting:
 ### Desktop list view
 ![Alt text](screenshots/desktop-view.PNG "desktop list view")
 
-
-In the project directory, you can run:
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-
-
 # Phone Catalogue
 Your task is to write a very simple product catalogue app.
 
