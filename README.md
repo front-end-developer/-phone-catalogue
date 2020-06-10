@@ -5,9 +5,9 @@ Example of Custom: Architecture with React 16.13.1, Redux, Epics, Rxjs, Services
 
 More focus was placed on the architecture, and communication between widgets then the UI design.
 
-__Note:__ _The current lifecycle methods componentWillMount, componentWillReceiveProps, and componentWillUpdate will be deprecated in a future ReactJS 16.x release._
+__Note:__ the following was not implemented because _the current lifecycle methods componentWillMount, componentWillReceiveProps, and componentWillUpdate will be deprecated in a future ReactJS 16.x release._
 
-TODO: docker script.
+__TODO: unit tests | docker script.__
 
 To install execute:
 - npm i
