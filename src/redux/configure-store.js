@@ -9,8 +9,11 @@ import promise from 'redux-promise-middleware';
 import {globalLoaderMiddleware} from 'redux-global-loader';
 import {rootEpic} from './epics';
 
-console.log('NODE_ENV env:', process.env.NODE_ENV);
-console.log('BABEL_ENV env:', process.env.BABEL_ENV);
+/**
+ * @description     added for convenience
+ *                  console.log('NODE_ENV env:', process.env.NODE_ENV);
+ */
+// console.log('NODE_ENV env:', process.env.NODE_ENV);
 
 const epicMiddleware = createEpicMiddleware();
 const devMiddleware = () => {

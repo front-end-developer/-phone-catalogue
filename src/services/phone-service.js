@@ -6,12 +6,15 @@ import {APISERVICE} from './APIS.service';
 import {fromFetch} from 'rxjs/fetch';
 import {catchError, switchMap} from 'rxjs/operators';
 export default class PhoneService {
-    getPhones() {
-        // return APISERVICE.API.GET_PHONES;
-        // return APISERVICE.API.getPhones();
 
+    /**
+     * @description this service is not used because I am using Redux Epics but if I use
+     *              a service I could use this.
+     * @returns     {Observable<json>}
+     */
+    getPhones() {
         return fromFetch(`${APISERVICE.API.GET_PHONES}`)
-            .pip(
+            .pipe(
                 switchMap( response => {
                     if (response.ok) {
                         return response.json();

@@ -2,20 +2,21 @@
  * Created by mawebley on 09/06/2020
  */
 import React from 'react';
-import './style.scss';
+import './top-bar-content.scss';
 
 const TopBarContent = () => {
     return (
-        <nav className="navbar navbar-custom">
-            <div className="container-fluid">
-                <div className="navbar-header">
-                    <a className="navbar-brand" href="#">
-                        <span className="brand"></span>
-                    </a>
+        <section className="fixed-navbar">
+            <nav className="navbar navbar-custom">
+                <div className="container-fluid">
+                    <div className="navbar-header">
+                        <a className="navbar-brand" href="#">
+                            <span className="brand"></span>
+                        </a>
+                    </div>
                 </div>
-            </div>
-
-        </nav>
+            </nav>
+        </section>
     );
 }
 export default TopBarContent;

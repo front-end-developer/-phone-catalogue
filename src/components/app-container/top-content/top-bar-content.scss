@@ -8,6 +8,7 @@
     height: 72px;
     background: $brand-background !important;
     z-index: 2;
+
     .brand {
       display: block;
       background: url($brand-logo) no-repeat $brand-background;
@@ -16,4 +17,10 @@
       height: 55px;
     }
   }
+}
+.fixed-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
 }

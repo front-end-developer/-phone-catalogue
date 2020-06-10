@@ -12,6 +12,23 @@ import ProductDetailComponent from './product-detail/product-detail-component';
 import cssModule from './product-list.module.scss'
 import * as phoneActions from '../../redux/actions/load-phones-action';
 
+/**
+ * @description     set initialised state
+ */
+const defaults = {
+    selectedProduct: {
+        id: null,
+        name: '',
+        manufacturer: '',
+        description: '',
+        price: '',
+        imageFileName: '',
+        screen: '',
+        processor: '',
+        ram: ''
+    }
+}
+
 class ProductListComponent extends Component {
 
     /**
@@ -20,7 +37,7 @@ class ProductListComponent extends Component {
      */
     state = {
         phones: this.props.phones,
-        selected: {}
+        selectedProduct: defaults.selectedProduct
     };
 
     /**
@@ -50,39 +67,32 @@ class ProductListComponent extends Component {
         this.props.loadProducts();
     }
 
-    /* TODO: no longer needed, was testing something
-    componentDidMount() {
-        this.setState((prevState, props) => {
-            console.log('setState');
-            console.log('this.props: ', this.props.phones);
-            console.log('prevState: ', prevState.phones);
-            console.log('props: ', props.phones);
+    /**
+     * @description     opens the product detail component
+     * @param           productData {object}
+     */
+    openProductDetail = (productData) => {
+        this.setState(() => {
             return ({
-                phones: [
-                    //...this.state.phones
-                    ...prevState.phones,
-                    props.phones
-                ]
+                selectedProduct: productData
             })
         });
-    }*/
-
-    /**
-     * TODO: testing something
-     * @param data
-     */
-    clickProduct = (data) => {
-        console.log(data);
-        // this.props.productSelected(data);
     }
 
     /**
-     *  TODO: update dumb component <ProductDetailComponent />
+     * @description     closes the product detail component
      */
+    closeProductDetail = () => {
+        this.setState(() => {
+            return ({
+                selectedProduct: defaults.selectedProduct
+            })
+        });
+    }
+
     render() {
-        // TODO: consider using destructure for [phones, loading]
         const {phones, isLoading, error} = this.props.phones;
-        console.log('isLoading: ', isLoading);
+
         if (isLoading) {
             return (
                 <div className={cssModule.loader} role="status">
@@ -91,10 +101,24 @@ class ProductListComponent extends Component {
             )
         }
 
+        if (error !== null) {
+            return (
+                <div className="row">
+                    Error retrieving phones.
+                </div>
+            )
+        }
+
         if (phones.length > 0) {
             const tmpl = phones.map((phone, index) => {
-                return <Template key={phone.id.toString()} {...phone} />
+                return <Template key={phone.id.toString()} {...phone} openProductDetail={this.openProductDetail} />
             });
+
+            const userSelectedProduct = () => {
+                if (this.state.selectedProduct.id !== null) {
+                    return <ProductDetailComponent {...this.state.selectedProduct} closeProductDetail={this.closeProductDetail} />
+                }
+            }
 
             // show ProductDetailComponent component on the right, populate with Redux on click
 
@@ -103,10 +127,7 @@ class ProductListComponent extends Component {
                     <div className="d-flex flex-wrap justify-content-between">
                         {tmpl}
                     </div>
-                    <div className="row">
-                        <div>ROW THREE (3)</div>
-                        <ProductDetailComponent />
-                    </div>
+                    { userSelectedProduct()}
                 </section>
             )
         } else {
@@ -122,12 +143,11 @@ class ProductListComponent extends Component {
 }
 
 ProductListComponent.propTypes = {
-    phones: PropTypes.object, // .array,
+    phones: PropTypes.object,
     loadProducts: PropTypes.func.isRequired
 }
 
-const mapComponentStateToProps = (state, ownProps) => {
-    console.log('phones loaded: ', state.phones);
+const mapComponentStateToProps = (state) => {
     return {
         phones: state.phones
     }
@@ -137,7 +157,7 @@ const mapDispatchToComponentProps = (dispatch) => {
     return {
         // productSelected: data => dispatch(phoneActions.xxxxxActionCreator(data))
         loadProducts: () => dispatch(phoneActions.loadPhonesActionCreator()),
-        loadedProducts: data => dispatch(phoneActions.loadPhonesSuccessActionCreator(data))
+        // loadedProducts: data => dispatch(phoneActions.loadPhonesSuccessActionCreator(data))
     }
 }
 
@@ -145,5 +165,3 @@ export default connect(
     mapComponentStateToProps,
     mapDispatchToComponentProps,
 )(ProductListComponent);
-
-// export default ProductListComponent;

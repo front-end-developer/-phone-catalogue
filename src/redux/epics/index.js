@@ -8,6 +8,11 @@ import {ajax} from 'rxjs/ajax';
 import {combineEpics, ofType} from 'redux-observable';
 import {APISERVICE} from '../../services/APIS.service';
 
+/**
+ * @description use redux epics to retrieve data
+ * @param action$
+ * @returns {*}
+ */
 const fetchPhonesEpic = action$ => (
     action$.pipe(
         ofType(types.LOAD_PHONES),
@@ -15,7 +20,6 @@ const fetchPhonesEpic = action$ => (
             return ajax.getJSON(APISERVICE.API.GET_PHONES)
                 .pipe(
                     map(phones => {
-                        console.log('TODO: delete this console.log: ', phones);
                         return {
                             type: types.LOAD_SUCCESS,
                             phones: phones.data
